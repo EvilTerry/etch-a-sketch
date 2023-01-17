@@ -7,6 +7,7 @@ let currentColour = DEFAULT_COLOUR;
 let currentMode = DEFAULT_MODE;
 
 const grid = document.querySelector('.grid');
+const colorPicker = document.querySelector('.colorPicker');
 const colourBtn = document.querySelector('.colour');
 const rainbowBtn = document.querySelector('.rainbow');
 const eraserBtn = document.querySelector('.eraser');
@@ -14,6 +15,7 @@ const clearBtn = document.querySelector('.clear');
 const sizeText = document.querySelector('.size');
 const slider = document.querySelector('.slider');
 
+colorPicker.addEventListener('change', (e) => {currentColour = e.target.value}, false)
 clearBtn.addEventListener('click', gridClear);
 colourBtn.addEventListener('click', () => modeChange('colour'));
 rainbowBtn.addEventListener('click', () => modeChange('rainbow'));
@@ -46,7 +48,7 @@ function createGrid(size) {
 function changeColour(e) {
     if(e.type === 'mouseover' && !mouseDown) return;
     if(currentMode === 'colour')
-        e.target.style.background = "black";
+        e.target.style.background = currentColour;
     else if(currentMode === 'eraser')
         e.target.style.background = "white";
     else if(currentMode === 'rainbow')
@@ -57,6 +59,7 @@ function changeColour(e) {
         e.target.style.background = `rgb(${randomR}, ${randomG}, ${randomB})`;
     }
 }
+
 
 function gridClear() {
     let child = grid.firstChild;
