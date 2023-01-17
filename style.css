@@ -1,7 +1,37 @@
-.container {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    background-color: bisque;
+}
+
+.header {
+    font-size: 38px;
+}
+
+.main {
+    display: flex;
+    gap: 30px;
+    padding-right: 260px;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.grid {
     display: flex;
     justify-content: space-between;
-    border: solid;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    background-color: white;
     max-width: 500px;
     width: 500px;
     max-height: 500px;
@@ -14,4 +44,63 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 0px;
+}
+
+.block {
+    user-select: none;
+}
+
+button {
+    background-color: #C6AD8E;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    transition: 0.4s;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+button:hover {
+    background-color: #9b866e;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background: #C6AD8E;
+    height: 15px;
+    opacity: 0.7;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: black; 
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.colorPicker {
+    appearance: none;
+    border: none;
+    height: 100px;
+    width: 100px;
+    background-color:bisque;
+}
+
+.colorPicker::-webkit-color-swatch {
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }

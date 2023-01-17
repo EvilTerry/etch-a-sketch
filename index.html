@@ -8,10 +8,23 @@
         <title>etch-a-sketch</title>
     </head>
     <body>
-        <button class="reset">Reset</button>
-        <div class="container">
-
+        <div class="header">
+            <h1>Etch-a-sketch</h1>
         </div>
+        <div class="main">
+            <div class="settings">
+                <input class="colorPicker" type="color" value="black" />
+                <button class="colour">Colour</button>
+                <button class="rainbow">Rainbow</button>
+                <button class="eraser">Eraser</button>
+                <div class="size">16x16</div>
+                <input type="range" min="1" max="50" value="16" class="slider" />
+                <button class="clear">Clear</button>                
+            </div>
+
+            <div class="grid"></div>            
+        </div>
+
         <script src="javascript.js"></script>
     </body>
 </html>
